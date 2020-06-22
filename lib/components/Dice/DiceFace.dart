@@ -8,13 +8,18 @@ class DiceFace extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.red,
+      color: Colors.white,
       height: this.size.height,
       width: this.size.width,
       child: Center(
-        child: Text(
-          this.display.toString(),
-          style: TextStyle(color: Colors.white),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8.0),
+          child: Image.asset(
+            'assets/images/dice-' + this.display.toString() + '.png',
+            width: this.size.width,
+            height: this.size.height,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
